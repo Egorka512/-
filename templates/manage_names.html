@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление именами</title>
+</head>
+<body>
+    <h1>Управление именами</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Введите имя" required>
+        <button type="submit" name="add">Добавить</button>
+        <button type="submit" name="delete">Удалить</button>
+    </form>
+    <h2>Список имен</h2>
+    <ul>
+        {% for name in names %}
+            <li>{{ name['name'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">На главную</a>
+</body>
+</html>

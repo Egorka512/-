@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчеты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+        .report-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;  /* Еле заметная граница */
+            border-radius: 8px;  /* Мягкие скругленные углы */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);  /* Легкая тень */
+        }
+        .report-section h2 {
+            margin-top: 0;
+            color: #444;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;  /* Еле заметные границы */
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9f9f9;
+            color: #555;
+            font-weight: 600;
+        }
+        td {
+            color: #666;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Отчеты</h1>
+    <!-- Кнопка "На главную" в начале страницы -->
+    <div class="back-link">
+        <a href="/">На главную</a>
+    </div>
+
+    <!-- Группируем отчеты по пользователям -->
+    {% set current_user = None %}
+    {% for report in reports %}
+        {% if report['first_name'] != current_user %}
+            <!-- Заголовок для нового пользователя -->
+            {% if current_user is not none %}
+                </table>  <!-- Закрываем таблицу предыдущего пользователя -->
+            {% endif %}
+            <div class="report-section">
+                <h2>{{ report['first_name'] }} {{ report['last_name'] }}</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Объект</th>
+                            <th>Адрес</th>
+                            <th>Время прибытия</th>
+                            <th>Время завершения</th>
+                            <th>Отчет</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        {% endif %}
+        <!-- Отчеты для текущего пользователя -->
+        <tr>
+            <td>{{ report['object_name'] }}</td>
+            <td>{{ report['address'] }}</td>
+            <td>{{ report['arrival_time'] }}</td>
+            <td>{{ report['completion_time'] }}</td>
+            <td>{{ report['report_text'] }}</td>
+            <td>
+                <a href="/delete_report/{{ report['id'] }}">Удалить</a>
+            </td>
+        </tr>
+        {% set current_user = report['first_name'] %}
+    {% endfor %}
+    <!-- Закрываем последнюю таблицу -->
+    </tbody>
+    </table>
+    </div>
+</body>
+</html>

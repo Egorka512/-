@@ -1,0 +1,219 @@
+.header {
+    background-color: #4CAF50; /* Зеленый фон для информационного поля */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Отступы для лучшего вида */
+    text-align: center; /* Центрируем текст */
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    margin-bottom: 20px; /* Отступ снизу */
+    border-radius: 5px; /* Скругление углов */
+    display: flex; /* Используем flex для размещения элементов */
+    justify-content: space-between; /* Размещение элементов по краям */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+/* Кнопка выхода в верхней панели */
+.header .logout-btn {
+    background-color: #f44336; /* Красный цвет для кнопки выхода */
+    border: 2px solid #f44336; /* Рамка красного цвета */
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.header .logout-btn:hover {
+    background-color: #e53935; /* Темный красный при наведении */
+    border-color: #e53935;
+}
+
+/* Скрытие верхней панели на страницах входа и регистрации */
+.header.hidden {
+    display: none;
+}
+
+/* Стили для списка сотрудников */
+.container {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ddd; /* Легкая рамка для контейнера */
+    border-radius: 5px; /* Скругление углов */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.employee-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.employee-list li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd; /* Легкая рамка для списка */
+    border-radius: 5px; /* Скругление углов */
+}
+
+.employee-list a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.employee-list a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для формы входа */
+.login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для формы регистрации */
+.register-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register-form button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для кнопок в верхней панели */
+.header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid white; /* Белая рамка для ссылок */
+    transition: background-color 0.3s;
+}
+
+.header a:hover {
+    background-color: #45a049;
+}
+
+/* Стили для кнопки регистрации */
+button {
+    border-radius: 5px; /* Скругление углов у кнопок */
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+/* Стили для кнопки отмены регистрации */
+button[type="button"] {
+    background-color: #f44336;
+    color: white;
+}
+
+button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+/* Стили для блока регистрации */
+#register-form-container {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Стили для контейнера с сотрудниками */
+#employee-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.delete-btn {
+    background-color: #f44336; /* Красный цвет */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /* Абсолютное позиционирование */
+    right: 10px; /* Отступ от правого края */
+    top: 50%; /* Центрировать по вертикали */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+}
+/* Стили для кнопки удаления на hover */
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Стиль для списка сотрудников */
+#employee-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#employee-list li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    position: relative;
+}
+/* Скрыть верхнюю панель, когда пользователь не авторизован */
+.hidden {
+    display: none;
+}

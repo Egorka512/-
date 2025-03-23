@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт для сотрудников</title>
+    <!-- Подключаем внешний CSS файл -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Информационное поле с названием организации и кнопками, а также кнопка "Выйти" -->
+    <div class="header" id="header">
+        <div>
+            ООО "ДОНБАСС-КИРПИЧ" | 
+            <a href="projects.html" target="_blank">Проекты</a> | 
+            <a href="weekly-report.html" target="_blank">Ежедневные отчеты</a>
+        </div>
+        <button class="logout-btn" onclick="logout()">Выйти</button> <!-- Кнопка "Выйти" -->
+    </div>
+
+    <!-- Форма входа -->
+    <div id="login-form" class="login-form border-box">
+        <h2>Вход</h2>
+        <input type="text" id="username" placeholder="Логин">
+        <input type="password" id="password" placeholder="Пароль">
+        <button onclick="checkLogin()">Войти</button>
+        <button onclick="document.getElementById('register-form-container').style.display='block'">Зарегистрироваться</button>
+    </div>
+
+    <!-- Форма регистрации -->
+    <div id="register-form-container">
+        <h2>Регистрация</h2>
+        <input type="text" id="first-name" placeholder="Имя" required>
+        <input type="text" id="last-name" placeholder="Фамилия" required>
+        <input type="text" id="position" placeholder="Должность" required>
+        <input type="password" id="password-register" placeholder="Пароль" required>
+        <button type="button" onclick="registerUser()">Зарегистрироваться</button>
+    </div>
+
+    <!-- Основной контент -->
+    <div id="content" style="display: none;">
+        <div class="container border-box">
+            <h2>Список сотрудников</h2>
+            <div id="employee-list-container">
+                <ul id="employee-list" class="employee-list">
+                    <!-- Здесь будут отображаться сотрудники -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем внешний JavaScript файл -->
+    <script src="script.js"></script>
+</body>
+</html>
